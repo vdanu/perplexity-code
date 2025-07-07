@@ -1,5 +1,6 @@
 # Perplexity-Code 🧠💻
 
+
 **AI-Driven Code Assistant — Built for Cursor, VSCode & CLI**  
 _NPM Package: `perplexity-code`_
 
@@ -10,6 +11,8 @@ _NPM Package: `perplexity-code`_
 
 > The power of Perplexity, reimagined for developers.  
 > Ask questions. Generate code. Debug. Refactor. All from your favorite terminal or editor.
+
+![image](https://github.com/user-attachments/assets/c6f7b95d-7c62-4999-9112-aaff6036decf)
 
 ---
 
