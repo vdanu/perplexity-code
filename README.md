@@ -1,144 +1,157 @@
-# Perplexity-Code 💻
+# Perplexity-Code 🧠💻
 
-**AI-Driven Code Assistant — Built for Cursor, VSCode & CLI**
+**AI-Driven Code Assistant — Built for Cursor, VSCode & CLI**  
+_NPM Package: `perplexity-code`_
 
+[![npm version](https://img.shields.io/npm/v/perplexity-code.svg)](https://www.npmjs.com/package/perplexity-code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Build](https://img.shields.io/github/actions/workflow/status/holasoymalva/perplexity-code/main.yml)](https://github.com/holasoymalva/perplexity-code/actions)
 [![Twitter](https://img.shields.io/twitter/follow/holasoymalva?style=social)](https://twitter.com/holasoymalva)
 
 > The power of Perplexity, reimagined for developers.  
-> Ask questions. Generate code. Debug. Refactor. All inside your favorite code editor or terminal.
+> Ask questions. Generate code. Debug. Refactor. All from your favorite terminal or editor.
 
 ---
 
-## 🧩 What is Perplexity-Code?
+## ✨ What is `perplexity-code`?
 
-**Perplexity-Code** is a specialized edition of the Perplexity CLI built for **developers**, fully compatible with:
+**Perplexity-Code** is an open-source, NPM-installable CLI tool for AI-enhanced software development.  
+It integrates seamlessly with your terminal, **Cursor**, or **VSCode** workflow and helps you:
 
-- 🖥️ **VS Code** (as a native extension)
-- 🧠 **Cursor** (AI-first code editor)
-- 🧪 **CLI workflows** (with syntax-aware code output)
+- Search technical topics
+- Explain or debug code
+- Convert between programming languages
+- Refactor and optimize code snippets
 
-Whether you're exploring a new framework, debugging an error, or refactoring legacy code — Perplexity-Code acts as your AI programming partner, wherever you code.
-
----
-
-## 🔥 Features
-
-- 🔍 **Semantic code search**: Ask anything — get precise, syntax-highlighted answers
-- 💬 **Contextual chat mode**: Code-aware back-and-forth with inline memory
-- 🛠️ **Code tools**: `/explain`, `/debug`, `/convert`, `/refactor`, `/optimize`
-- 🧠 **Editor integrations**: Cursor and VSCode compatibility out-of-the-box
-- ⚡ **CLI-mode** for fast, distraction-free querying
-- 🧪 **Multi-model support** (Perplexity, Gemini, OpenAI)
+Powered by Perplexity (or configurable LLM APIs), this tool turns your terminal into a coding knowledge copilot.
 
 ---
 
-## 🎯 Use Cases
+## 🔧 Installation
 
-- 🧑‍💻 Learn new libraries and patterns on the fly
-- 🐛 Understand and fix complex bugs
-- 🪄 Generate snippets in multiple languages
-- 🔁 Refactor legacy codebases with AI guidance
-- 📎 Summarize or document code files
-
----
-
-## 🚀 Quickstart
-
-### 1. Clone the Repo
+### Global installation
 
 ```bash
-git clone https://github.com/holasoymalva/perplexity-code.git
-cd perplexity-code
+npm install -g perplexity-code
 ````
 
-### 2. Install dependencies
+> You can now run the CLI using `perplexity-code` or `pxc`.
+
+### One-off use (no install required)
 
 ```bash
-npm install
-# or
-pip install -r requirements.txt
-```
-
-### 3. Set up your API key
-
-Create a `.env` file:
-
-```env
-PERPLEXITY_API_KEY=your_api_key_here
+npx perplexity-code "What is the difference between var, let and const?"
 ```
 
 ---
 
-## 💻 Editor Integrations
-
-### ✅ VSCode
-
-1. Go to `Extensions > Install from VSIX`
-2. Choose the `perplexity-code.vsix` file (coming soon)
-3. Use `⌘⇧P` → `Perplexity: Ask AI` to start chatting with code context
-
-### ✅ Cursor
-
-1. Open `Settings > Plugins`
-2. Add CLI integration path to `perplexity-code` binary
-3. Use `⌘K` or `/` command palette to ask in context
-
----
-
-## 🧪 CLI Usage
+## 🚀 Usage Examples
 
 ```bash
-$ perplexity-code "What's the difference between useMemo and useCallback?"
+pxc "How do I write a GraphQL resolver in Node.js?"
 ```
 
 ```bash
-$ perplexity-code /explain "What does this SQL query do?" -f ./query.sql
+pxc /explain "./src/hooks/useAuth.ts"
 ```
 
 ```bash
-$ perplexity-code /refactor ./legacy-component.js
+pxc /convert "Convert this Python dict to a TypeScript interface"
+```
+
+```bash
+pxc /debug "Cannot read property 'length' of undefined"
+```
+
+You can also pipe code:
+
+```bash
+cat main.py | pxc /refactor
 ```
 
 ---
 
 ## ⚙️ Configuration
 
-Customize behavior via `perplexity.config.json`:
+Create a `.perplexityrc` or `perplexity.config.json` in your project or home directory:
 
 ```json
 {
+  "apiKey": "sk-XXXXXX",
   "model": "perplexity-codellama",
-  "defaultCommand": "/explain",
-  "editor": "vscode",
-  "language": "typescript"
+  "language": "typescript",
+  "editor": "vscode"
 }
 ```
 
----
-
-## 🧱 Roadmap
-
-* [ ] Inline VSCode explanations (hover)
-* [ ] Git diff analysis and patch generation
-* [ ] Multi-file context support
-* [ ] Custom slash commands
-* [ ] Offline fallback mode
-
----
-
-## 🤝 Contribute
-
-Perplexity-Code is community-driven.
-We welcome contributions, feedback, and plugins.
+Or pass options via CLI:
 
 ```bash
-# Fork and clone
-git clone https://github.com/holasoymalva/perplexity-code.git
+pxc "Explain async/await" --model perplexity-codellama --language javascript
 ```
 
-Pull requests are welcome. See `CONTRIBUTING.md` (coming soon).
+---
+
+## 🧩 Editor Integrations
+
+### ✅ Cursor
+
+1. Open Cursor → Settings → Plugins
+2. Add path to `perplexity-code` binary
+3. Use inline queries like `/explain` or `/debug` in the editor
+
+### ✅ VSCode (coming soon)
+
+* Native extension with slash commands and inline answers
+* Chat-style interface with syntax-aware suggestions
+
+---
+
+## 🔥 Features
+
+* 💬 Slash-based commands: `/explain`, `/debug`, `/convert`, `/optimize`, `/summarize`
+* 🧠 Context-aware answers with code formatting
+* 🧪 Multi-model support (Perplexity, Gemini, OpenAI)
+* 📂 File-based input and stdin piping
+* 🛠️ Works inside tmux, iterm, Warp, or Cursor
+
+---
+
+## 🛤 Roadmap
+
+* [ ] VSCode extension release
+* [ ] Git diff-aware prompts (`/review`)
+* [ ] Multi-language translation mode
+* [ ] Plugins: `/test`, `/doc`, `/summarize`
+* [ ] Local LLM fallback (offline mode)
+
+---
+
+## 🤝 Contributing
+
+We’d love your input, ideas, and PRs. Start with:
+
+```bash
+git clone https://github.com/holasoymalva/perplexity-code.git
+cd perplexity-code
+npm install
+npm link # for local CLI testing
+```
+
+> Want to contribute a command? Check out `/src/commands`.
+
+---
+
+## 📦 Publishing Notes (for maintainers)
+
+To publish a new version to NPM:
+
+```bash
+npm version patch
+npm publish
+```
+
+Ensure you are logged in to NPM with correct credentials.
 
 ---
 
@@ -148,8 +161,10 @@ MIT License © 2025 [@holasoymalva](https://github.com/holasoymalva)
 
 ---
 
-## 💬 Follow & Connect
+## 🌐 Links
 
-Built with ❤️ by [@holasoymalva](https://twitter.com/holasoymalva)
+* GitHub: [https://github.com/holasoymalva/perplexity-code](https://github.com/holasoymalva/perplexity-code)
+* NPM: [https://npmjs.com/package/perplexity-code](https://npmjs.com/package/perplexity-code)
+* Twitter: [@holasoymalva](https://twitter.com/holasoymalva)
 
-> Let’s redefine how developers interact with knowledge.
+> Built for the curious. Made for developers. Ready for your terminal. ⚡️
