@@ -8,6 +8,12 @@
     "pxc": "./bin/pxc.js"
   },
   "type": "module",
+  "files": [
+    "bin/",
+    "src/",
+    "utils/",
+    "package.json"
+  ],
   "scripts": {
     "start": "node ./bin/pxc.js",
     "link": "npm link",
